@@ -1,2 +1,2 @@
-from markov_python-master.cc_markov import MarkovChain
+from ca_markov.cc_markov import MarkovChain
 import urllib2
