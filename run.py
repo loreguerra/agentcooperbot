@@ -1,3 +1,3 @@
-from markov_python.cc_markov import MarkovChain
+from ca_markov.cc_markov import MarkovChain
 import fetch_data
 import urllib2
