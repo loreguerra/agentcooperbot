@@ -9,4 +9,4 @@ import scrapy
 
 
 class DalecooperScrapyItem(scrapy.Item):
-    text = scrapy.Field
+    quote = scrapy.Field()
