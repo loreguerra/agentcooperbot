@@ -7,5 +7,6 @@
 
 
 class DalecooperScrapyPipeline(object):
-    def process_item(self, item, spider):
+    def process_item(self, DalecooperScrapyItem, DalecooperSpider):
+        
         return item
