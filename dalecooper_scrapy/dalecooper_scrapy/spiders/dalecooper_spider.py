@@ -1,6 +1,7 @@
 import scrapy
 from dalecooper_scrapy.items import DalecooperScrapyItem
 from scrapy.selector import Selector
+import re
 
 class DalecooperSpider(scrapy.Spider):
     name = 'dalecooper'
@@ -10,7 +11,8 @@ class DalecooperSpider(scrapy.Spider):
     def parse(self, response):
         sel = Selector(response)
         for line in sel.xpath('//i[a[@href="/name/nm0001492/"]]/following-sibling::text()[1]').extract():
-            quote = str(line)
+            line = str(line)
+            removed_linebreaks = re.sub(r'\n', "", line)
             item = DalecooperScrapyItem()
             item['quote'] = quote
             yield item
