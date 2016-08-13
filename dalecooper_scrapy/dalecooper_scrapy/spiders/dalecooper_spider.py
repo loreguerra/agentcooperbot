@@ -12,7 +12,7 @@ class DalecooperSpider(scrapy.Spider):
         sel = Selector(response)
         for line in sel.xpath('//i[a[@href="/name/nm0001492/"]]/following-sibling::text()[1]').extract():
             line = str(line)
-            removed_linebreaks = re.sub(r'\n', "", line)
+            quote = re.sub(r'\s{2,}|[\r\n]', "", line)
             item = DalecooperScrapyItem()
             item['quote'] = quote
             yield item
