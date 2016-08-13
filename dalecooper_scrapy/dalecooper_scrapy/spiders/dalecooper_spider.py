@@ -9,7 +9,11 @@ class DalecooperSpider(scrapy.Spider):
 
     def parse(self, response):
         sel = Selector(response)
-        for quote in sel.xpath('//i[a[@href="/name/nm0001492/"]]/following-sibling::text()[1]').extract():
+        for line in sel.xpath('//i[a[@href="/name/nm0001492/"]]/following-sibling::text()[1]').extract():
+            quote = str(line)
             item = DalecooperScrapyItem()
             item['quote'] = quote
             yield item
+
+
+# line re.sub \n, line to string, string spli(' '), string join?
