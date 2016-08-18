@@ -12,10 +12,10 @@ class DalecooperSpider(scrapy.Spider):
         sel = Selector(response)
         for line in sel.xpath('//i[a[@href="/name/nm0001492/"]]/following-sibling::text()[1]').extract():
             line = str(line)
-            quote = re.sub(r'\s{2,}|[\r\n\:\[]', "", line)
-            item = DalecooperScrapyItem()
-            item['quote'] = quote
+            quote = re.sub(r'\s{2,}|[\r\n\:\[]', '', line)
+            if quote == '':
+                del quote
+            else:
+                item = DalecooperScrapyItem()
+                item['quote'] = quote
             yield item
-
-
-# line re.sub \n, line to string, string spli(' '), string join?
