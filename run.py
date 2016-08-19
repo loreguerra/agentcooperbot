@@ -7,22 +7,34 @@ mc = MarkovChain()
 #use function from fetch_data to grab CSV file and turn into strings
 quote_list = fetch_data.get_quote_list()
 
+naughty_sentence_enders = ['if', 'at', 'the', 'of', 'and', 'that', 'he', 'she', 'are', 'a', 'whos', 'let', 'ive', 'to', 'theyre', 'shes', 'i' ,'in', 'it']
+names = ['laura', 'palmer', 'leo', 'johnson', 'sheriff', 'agent', 'dale', 'cooper', 'mayor', 'lana', 'albert', 'james', 'hurley', 'annie', 'caroline', 'i', 'carl', 'audrey', 'gordon', 'bob', 'harry', 'twin peaks', 'lucy', 'andy', 'diane' 'maddy', 'ferguson', 'mr', 'packard', 'leland', 'great northern hotel']
+#import names^^ from external list - json?
+
 #Adding string to instance and generate markoved text from instance
 MarkovChain.add_string(mc, quote_list)
 
-markov_text = MarkovChain.generate_text(mc)
-#if markov_text[len(markov_text)-1] in naughty_words_list
-first_letter = markov_text[0][0].upper()
-first_word_lower = markov_text[0]
-partial_word = first_word_lower[1:]
-first_word_upper = first_letter + partial_word
-markov_text.pop(0)
-sentence = '%s %s' % (first_word_upper, ' '.join(markov_text))
-print sentence
+def create_reply():
+    markov_text = MarkovChain.generate_text(mc)
+    markov_filtered = []
+    for word in markov_text: #change to lambda filter?
+        if markov_text[len(markov_text)-1] in naughty_sentence_enders:
+            del markov_text[len(markov_text)-1]
+        elif word in names:
+            markov_filtered.append(word.title())
+        else:
+            markov_filtered.append(word)
+
+    #creating capitalized first word. would like to refactor later
+    first_letter = markov_filtered[0][0].upper()
+    first_word_lower = markov_filtered[0]
+    first_word_upper = first_letter + first_word_lower[1:]
+    markov_filtered.pop(0)
+    sentence = '%s %s' % (first_word_upper, ' '.join(markov_filtered))
+    print sentence
+
+create_reply()
 
 #create function to call generate_text in reply
-#capitalize first word letter
-# if sentence contains "why, what, who, where" add '?' to end
 #if last word is 'if, at, the, of, and, that, he, she, are' delete and finish sentence - loop?
-#join list of words into string
 #display string as "Special Agent Dale Cooper: {string}"
