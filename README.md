@@ -7,3 +7,11 @@ Right now, the quotes are extracted according to actor URL, cleaned up, and dump
 In the future, I'd like to set up a pipeline and use a CSV item exporter to export the data to a CSV file, so everything is automated.
 
 I currently have the spider cleaning up the extracted data before writing to the item and then fetch_data.py reading the CSV, cleaning it up again, and adding to a list of strings. I'd like to have either the spider or fetch_data.py do one process to clean up the text, but not both files with two separate processes.
+
+##Ideas for future versions
+
+1. Scrape more sites for more quotes
+2. Create GUI for chatting
+3. Add emojis
+4. Modify the Markov module
+5. Figure out how to get natural-sounding sentences
