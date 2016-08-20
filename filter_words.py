@@ -20,7 +20,13 @@ naughty_sentence_enders = [
     'it',
     'with',
     'for',
-    'as'
+    'as',
+    'when',
+    'youre',
+    'im',
+    'has',
+    'got',
+    'about'
     ]
 
 names = [
