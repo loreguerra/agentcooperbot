@@ -19,7 +19,9 @@ naughty_sentence_enders = [
     'in',
     'it',
     'with',
-    'for']
+    'for',
+    'as'
+    ]
 
 names = [
     'laura',

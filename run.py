@@ -15,19 +15,22 @@ MarkovChain.add_string(mc, quote_list)
 def create_reply():
     markov_text = MarkovChain.generate_text(mc)
     markov_filtered = []
-    for word in markov_text: #change to lambda filter?
+    for word in markov_text:
         if word == markov_text[0]:
             markov_filtered.append(word.title())
         elif word in filter_words.names:
             markov_filtered.append(word.title())
+        #change to lambda filter?
         elif markov_text[len(markov_text)-1] in filter_words.naughty_sentence_enders:
             del markov_text[len(markov_text)-1]
         else:
             markov_filtered.append(word)
-    sentence = ' '.join(markov_filtered)
+    sentence = 'Special Agent Dale Cooper: %s.' % (' '.join(markov_filtered))
     print sentence
 
 create_reply()
 
+
+#get rid of duplicate words in a row
+#generate random sentence ending punctuation? either . or ?
 #create function to call generate_text in reply
-#display string as "Special Agent Dale Cooper: {string}"
