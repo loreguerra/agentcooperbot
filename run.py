@@ -32,5 +32,4 @@ create_reply()
 
 
 #get rid of duplicate words in a row
-#generate random sentence ending punctuation? either . or ?
 #create function to call generate_text in reply

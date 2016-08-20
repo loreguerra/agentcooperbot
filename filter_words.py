@@ -71,6 +71,7 @@ names = [
      'rodd',
      'earle',
      'im',
-     'doc'
-
+     'doc',
+     'mexican',
+     'chihuahua'
      ]
