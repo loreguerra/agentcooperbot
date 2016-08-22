@@ -11,6 +11,11 @@ quote_list = fetch_data.get_quote_list()
 #Adding string to instance and generate markoved text from instance
 MarkovChain.add_string(mc, quote_list)
 
+# display loading... connecting... display status, type exit to exit, display hello from cooper
+# listen for input, generate response
+
+
+
 # Filter out weird sentence endings, capitalize first word and names
 def create_reply():
     markov_text = MarkovChain.generate_text(mc)
@@ -28,8 +33,4 @@ def create_reply():
     sentence = 'Special Agent Dale Cooper: %s.' % (' '.join(markov_filtered))
     print sentence
 
-
-
-
-#get rid of duplicate words in a row
 #create function to call generate_text in reply
