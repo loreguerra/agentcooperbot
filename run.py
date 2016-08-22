@@ -28,7 +28,7 @@ def create_reply():
     sentence = 'Special Agent Dale Cooper: %s.' % (' '.join(markov_filtered))
     print sentence
 
-create_reply()
+
 
 
 #get rid of duplicate words in a row
