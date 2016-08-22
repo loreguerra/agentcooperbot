@@ -18,9 +18,9 @@ USER_NICK = ''
 DC_NICK = 'spagent_dc2'
 
 print 'Connecting...'
-sleep(2)
+sleep(1)
 print 'Loading...'
-sleep(2)
+sleep(1)
 print 'Connected. You are now online with spagent_dc2. Type "exit" to exit anytime. Specify your nickname with /nick.\n\n'
 print '%s: Special Agent Dale Cooper here.\n' % DC_NICK
 USER_NICK = raw_input('/nick:')
@@ -29,6 +29,9 @@ USER_NICK = raw_input('/nick:')
 def user_input():
     user_reply = raw_input('%s: ' % USER_NICK)
     if user_reply == 'exit':
+        print 'Disconnecting...'
+        sleep(1)
+        print 'bye'
         quit()
 
 # Filter out weird sentence endings, capitalize first word and names
