@@ -1,6 +1,12 @@
 # Special Agent Dale Cooper bot
 
-Building a chat bot with the Markov Chain module from Codecademy, using Scrapy to collect the best quotes from Dale Cooper via IMDb.
+A Dale Cooper bot styled as an IRC chat room. The user is asked to supply a nickname and sign-in/validation/lag time is simulated with ```sleep()``` function.
+
+##Run program
+
+Clone the repo. In command line, use ```python run.py``` and follow on-screen instructions.
+
+##Comments
 
 Right now, the quotes are extracted according to actor URL, cleaned up, and dumped into a CSV file using a feed export.
 
@@ -11,9 +17,7 @@ I currently have the spider cleaning up the extracted data before writing to the
 ##Ideas for future versions
 
 1. Scrape more sites for more quotes
-2. Create GUI for chatting
 3. Add emojis
 4. Modify the Markov module
-5. Figure out how to get natural-sounding sentences
 6. Spell check quotes
 7. Check for duplicate words in a row
